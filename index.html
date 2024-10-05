@@ -180,17 +180,33 @@
             <!--===== CONTACT =====-->
             <section class="contact section" id="contact">
                 <h2 class="section-title">Contact</h2>
-
+            
                 <div class="contact__container bd-grid">
-                    <form action="" class="contact__form">
-                        <input type="text" placeholder="Name" class="contact__input">
-                        <input type="mail" placeholder="Email" class="contact__input">
-                        <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
-                        <input type="button" value="Contact" class="contact__button button">
+                    <form action="" class="contact__form" id="contactForm">
+                        <input type="text" id="nameInput" placeholder="Name" class="contact__input" required>
+                        <input type="email" id="emailInput" placeholder="Email" class="contact__input" required>
+                        <textarea name="" id="messageInput" cols="0" rows="10" class="contact__input" placeholder="Message"></textarea>
+                        <input type="button" value="Contact" class="contact__button button" id="contactButton">
                     </form>
                 </div>
             </section>
-        </main>
+            
+            <script>
+                document.getElementById('contactButton').addEventListener('click', function() {
+                    // Get the input value
+                    const name = document.getElementById('nameInput').value;
+            
+                    // Check if the name entered is 'goutham'
+                    if(name.toLowerCase() === 'goutham') {
+                        // Redirect to YouTube if authenticated
+                        window.location.href = 'https://www.youtube.com';
+                    } else {
+                        // Display an error message if the name is incorrect
+                        alert('wrong passkey');
+                    }
+                });
+            </script>
+            
 
         <!--===== FOOTER =====-->
         <footer class="footer">
